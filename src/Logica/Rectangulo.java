@@ -34,6 +34,7 @@ public class Rectangulo extends Forma{
 	@Override
 	public void mostrarInfo() {
 		
+		System.out.println("Figura: " + this.getNombreForma());
 		System.out.println("Color: " + this.getColor());
 		System.out.println("Lado mayor: " + this.ladoMayor);
 		System.out.println("Lado menor: " + this.ladoMenor);

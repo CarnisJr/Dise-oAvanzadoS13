@@ -31,6 +31,7 @@ public class Circulo extends Elipse{
 	@Override
 	public void mostrarInfo() {
 		
+		System.out.println("Figura: " + this.getNombreForma());
 		System.out.println("Color: " + this.getColor());
 		System.out.println("Radio: " + this.radio);
 		System.out.println("Area: " + this.getArea());

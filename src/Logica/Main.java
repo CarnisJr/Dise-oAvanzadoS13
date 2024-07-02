@@ -13,7 +13,8 @@ public class Main {
 		asignarColor(arrayFormas);
 		System.out.println("Esta es la figura con mayor area: ");
 		encontrarAreaMayor(arrayFormas);
-		escalarFigura(arrayFormas);
+		escalarForma(arrayFormas);
+		trasladarForma(arrayFormas);
 	}
 	
 	public static Forma crearFormas() {
@@ -95,6 +96,7 @@ public class Main {
 		System.out.println("Ingresa el color nuevo: ");
 		nuevoColor = scan.next();
 
+		System.out.println("-------------------------------------------------");
 		for(int i = 0; i < arrayFormas.length; i++) {
 			
 			arrayFormas[i].setColor(nuevoColor);
@@ -103,6 +105,7 @@ public class Main {
 			arrayFormas[i].calcPerimetro();
 			arrayFormas[i].mostrarInfo();
 		}
+		System.out.println("-------------------------------------------------");
 	}
 	
 	public static Forma[] agregarFormasArray() {
@@ -152,9 +155,10 @@ public class Main {
 				break;
 			}
 		}
+		System.out.println("-------------------------------------------------");
 	}
 	
-	public static void escalarFigura(Forma[] arrayFormas) {
+	public static void escalarForma(Forma[] arrayFormas) {
 		
 		int indiceForma = 0;
 		double escalaNueva = 0;
@@ -175,10 +179,42 @@ public class Main {
 			}
 		}
 
+		imprimirInfo(arrayFormas);
+	}
+	
+	public static void trasladarForma(Forma[] arrayFormas) {
+		
+		int indiceForma = 0;
+		double posX = 0;
+		double posY = 0;
+		
+		System.out.print("Ingresa el indice de la figura que quiere trasladar: ");
+		indiceForma = scan.nextInt();
+		System.out.print("Nueva posicion en x: ");
+		posX = scan.nextDouble();
+		System.out.print("Nueva posicion en y: ");
+		posY = scan.nextDouble();
+		
+		for(int i = 0; i < arrayFormas.length; i++) {
+			
+			if(indiceForma == i) {
+				
+				arrayFormas[i].moverForma(posX, posY);
+				break;
+			}
+		}
+		
+		imprimirInfo(arrayFormas);
+	}
+	
+	public static void imprimirInfo(Forma[] arrayFormas) {
+		
+		
+		System.out.println("-------------------------------------------------");
 		for(int i = 0; i < arrayFormas.length; i++) {
 			
 			arrayFormas[i].mostrarInfo();;
 		}
-		
+		System.out.println("-------------------------------------------------");
 	}
 }

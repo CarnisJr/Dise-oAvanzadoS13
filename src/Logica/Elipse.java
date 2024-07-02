@@ -35,6 +35,7 @@ public class Elipse extends Forma{
 	@Override
 	public void mostrarInfo() {
 		
+		System.out.println("Figura: " + this.getNombreForma());
 		System.out.println("Color: " + this.getColor());
 		System.out.println("Radio mayor: " + this.radioMayor);
 		System.out.println("Radio menor: " + this.radioMenor);

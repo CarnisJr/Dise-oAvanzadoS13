@@ -76,4 +76,10 @@ public class Forma {
 		
 		System.out.println("No hay info de la Forma");
 	}
+	
+	public void moverForma(double nuevaPosX, double nuevaPosY) {
+		
+		this.posicion.setPosX(nuevaPosX);
+		this.posicion.setPosY(nuevaPosY);
+	}
 }

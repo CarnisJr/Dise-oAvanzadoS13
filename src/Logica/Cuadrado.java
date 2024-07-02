@@ -31,6 +31,7 @@ public class Cuadrado extends Rectangulo {
 	@Override
 	public void mostrarInfo() {
 		
+		System.out.println("Figura: " + this.getNombreForma());
 		System.out.println("Color: " + this.getColor());
 		System.out.println("Lado: " + this.lado);
 		System.out.println("Area: " + this.getArea());
