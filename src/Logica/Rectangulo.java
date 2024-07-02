@@ -20,14 +20,25 @@ public class Rectangulo extends Forma{
 	}
 
 	@Override
-	public double calcArea() {
+	public void calcArea() {
 		
-		return this.area = this.ladoMayor * this.ladoMenor;
+		this.area = this.ladoMayor * this.ladoMenor;
 	}
 
 	@Override
-	public double calcPerimetro() {
+	public void calcPerimetro() {
 		
-		return this.perimetro = 2 * (this.ladoMayor + this.ladoMenor);
+		this.perimetro = 2 * (this.ladoMayor + this.ladoMenor);
+	}
+	
+	@Override
+	public void mostrarInfo() {
+		
+		System.out.println("Lado mayor: " + this.ladoMayor);
+		System.out.println("Lado menor: " + this.ladoMenor);
+		System.out.println("Area: " + this.area);
+		System.out.println("Perimetro: " + this.perimetro);
+		System.out.println("Posicion: (" + this.posicion.getPosX() + ", "+ this.posicion.getPosY() + ")");
+		System.out.println("");
 	}
 }

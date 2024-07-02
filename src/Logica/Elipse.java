@@ -21,14 +21,25 @@ public class Elipse extends Forma{
 	}
 
 	@Override
-	public double calcArea() {
+	public void calcArea() {
 		
-		return this.area = this.PI * this.radioMayor * this.radioMenor;
+		this.area = this.PI * this.radioMayor * this.radioMenor;
 	}
 
 	@Override //2PIsqrt((r^2+R^2)/2)
-	public double calcPerimetro() {
+	public void calcPerimetro() {
 		
-		return this.area = 2 * PI * radioMayor;
+		this.perimetro = 7;
+	}
+
+	@Override
+	public void mostrarInfo() {
+		
+		System.out.println("Radio mayor: " + this.radioMayor);
+		System.out.println("Radio menor: " + this.radioMenor);
+		System.out.println("Area: " + this.area);
+		System.out.println("Perimetro: " + this.perimetro);
+		System.out.println("Posicion: (" + this.posicion.getPosX() + ", "+ this.posicion.getPosY() + ")");
+		System.out.println("");
 	}
 }

@@ -5,7 +5,7 @@ public class Forma {
 	private String color = "";
 	private String nombreForma = "";
 	
-	private Posicion posicion = null;
+	public Posicion posicion = null;
 	
 	public double area = 0;
 	public double perimetro = 0;
@@ -17,18 +17,38 @@ public class Forma {
 		this.posicion = pos;
 	}
 	
-	public double calcArea() {
+	public void setColor(String color) {
 		
-		return this.area;
+		this.color = color;
+	}
+	
+	public String getColor() {
+		
+		return this.nombreForma;
+	}
+	
+	public String getNombreForma() {
+		
+		return this.nombreForma;
+	}
+	
+	public void calcArea() {
+		
+		this.area = 0;
 	}
 
-	public double calcPerimetro() {
+	public void calcPerimetro() {
 		
-		return this.perimetro;
+		this.perimetro = 0;
 	}
 
 	public void cambiarEscala(double escala) {
 		
 		System.out.println("Escala 1 a 1");
+	}
+	
+	public void mostrarInfo() {
+		
+		System.out.println("No hay info de la Forma");
 	}
 }

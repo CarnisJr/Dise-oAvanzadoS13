@@ -10,4 +10,24 @@ public class Posicion {
 		this.posX = posX;
 		this.posY = posY;
 	}
+	
+	public void setPosX(double posX) {
+		
+		this.posX = posX;
+	}
+
+	public void setPosY(double posY) {
+		
+		this.posY = posY;
+	}
+
+	public double getPosX() {
+		
+		return this.posX;
+	}
+
+	public double getPosY() {
+		
+		return this.posY;
+	}
 }

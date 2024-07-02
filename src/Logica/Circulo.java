@@ -17,14 +17,24 @@ public class Circulo extends Elipse{
 	}
 
 	@Override
-	public double calcArea() {
+	public void calcArea() {
 		
-		return this.area = this.PI * this.radio * this.radio;
+		this.area = this.PI * this.radio * this.radio;
 	}
 
 	@Override
-	public double calcPerimetro() {
+	public void calcPerimetro() {
 		
-		return this.area = 2 * PI * this.radio;
+		this.perimetro = 2 * PI * this.radio;
+	}
+	
+	@Override
+	public void mostrarInfo() {
+		
+		System.out.println("Radio: " + this.radio);
+		System.out.println("Area: " + this.area);
+		System.out.println("Perimetro: " + this.perimetro);
+		System.out.println("Posicion: (" + this.posicion.getPosX() + ", "+ this.posicion.getPosY() + ")");
+		System.out.println("");
 	}
 }

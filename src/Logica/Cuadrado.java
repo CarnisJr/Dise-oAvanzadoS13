@@ -17,14 +17,24 @@ public class Cuadrado extends Rectangulo {
 	}
 
 	@Override
-	public double calcArea() {
+	public void calcArea() {
 		
-		return this.area = this.lado * this.lado;
+		this.area = this.lado * this.lado;
 	}
 
 	@Override
-	public double calcPerimetro() {
+	public void calcPerimetro() {
 		
-		return this.perimetro = 4 * this.lado;
+		this.perimetro = 4 * this.lado;
+	}
+	
+	@Override
+	public void mostrarInfo() {
+		
+		System.out.println("Lado: " + this.lado);
+		System.out.println("Area: " + this.area);
+		System.out.println("Perimetro: " + this.perimetro);
+		System.out.println("Posicion: (" + this.posicion.getPosX() + ", "+ this.posicion.getPosY() + ")");
+		System.out.println("");
 	}
 }
