@@ -19,22 +19,23 @@ public class Cuadrado extends Rectangulo {
 	@Override
 	public void calcArea() {
 		
-		this.area = this.lado * this.lado;
+		this.setArea(this.lado * this.lado);
 	}
 
 	@Override
 	public void calcPerimetro() {
 		
-		this.perimetro = 4 * this.lado;
+		this.setPerimetro(4 * this.lado);
 	}
 	
 	@Override
 	public void mostrarInfo() {
 		
+		System.out.println("Color: " + this.getColor());
 		System.out.println("Lado: " + this.lado);
-		System.out.println("Area: " + this.area);
-		System.out.println("Perimetro: " + this.perimetro);
-		System.out.println("Posicion: (" + this.posicion.getPosX() + ", "+ this.posicion.getPosY() + ")");
+		System.out.println("Area: " + this.getArea());
+		System.out.println("Perimetro: " + this.getPerimetro());
+		System.out.println("Posicion: (" + this.getPosicion().getPosX() + ", "+ this.getPosicion().getPosY() + ")");
 		System.out.println("");
 	}
 }

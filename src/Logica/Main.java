@@ -11,6 +11,9 @@ public class Main {
 		
 		arrayFormas = agregarFormasArray();
 		asignarColor(arrayFormas);
+		System.out.println("Esta es la figura con mayor area: ");
+		encontrarAreaMayor(arrayFormas);
+		escalarFigura(arrayFormas);
 	}
 	
 	public static Forma crearFormas() {
@@ -43,40 +46,40 @@ public class Main {
 			
 			pos = crearPosicion();
 			nombreFigura = "Rectangulo";
-			System.out.println("Ingrese el color: ");
+			System.out.print("Ingrese el color: ");
 			color = scan.next();
-			System.out.println("Ingrese el lado mayor: ");
+			System.out.print("Ingrese el lado mayor: ");
 			ladoMayor = scan.nextDouble();
-			System.out.println("Ingrese el lado menor: ");
+			System.out.print("Ingrese el lado menor: ");
 			ladoMenor = scan.nextDouble();
 			return new Rectangulo(color, nombreFigura, pos, ladoMayor, ladoMenor);
 		case 2:
 
 			pos = crearPosicion();
 			nombreFigura = "Cuadrado";
-			System.out.println("Ingrese el color: ");
+			System.out.print("Ingrese el color: ");
 			color = scan.next();
-			System.out.println("Ingrese el lado: ");
+			System.out.print("Ingrese el lado: ");
 			lado = scan.nextDouble();
 			return new Cuadrado(color, nombreFigura, pos, lado);
 		case 3:
 
 			pos = crearPosicion();
 			nombreFigura = "Elipse";
-			System.out.println("Ingrese el color: ");
+			System.out.print("Ingrese el color: ");
 			color = scan.next();
-			System.out.println("Ingrese el radio mayor: ");
+			System.out.print("Ingrese el radio mayor: ");
 			radioMayor = scan.nextDouble();
-			System.out.println("Ingrese el radio menor: ");
+			System.out.print("Ingrese el radio menor: ");
 			radioMenor = scan.nextDouble();
 			return new Elipse(color, nombreFigura, pos, radioMayor, radioMenor);
 		case 4:
 
 			pos = crearPosicion();
 			nombreFigura = "Circulo";
-			System.out.println("Ingrese el color: ");
+			System.out.print("Ingrese el color: ");
 			color = scan.next();
-			System.out.println("Ingrese el radio: ");
+			System.out.print("Ingrese el radio: ");
 			radio = scan.nextDouble();
 			return new Circulo(color, nombreFigura, pos, radio);
 		default:
@@ -127,4 +130,55 @@ public class Main {
 		return new Posicion(posicionX, posicionY);
 	}
 
+	public static void encontrarAreaMayor(Forma[] arrayFormas) {
+		
+		double mayorArea = 0;
+		
+		for(int i = 0; i < arrayFormas.length - 1; i++) {
+			
+			mayorArea = arrayFormas[i].getArea();
+			if(mayorArea < arrayFormas[i + 1].getArea()) {
+				
+				mayorArea = arrayFormas[i + 1].getArea();
+			}
+		}
+		
+		for(int i = 0; i < arrayFormas.length; i++) {
+			
+			if(mayorArea == arrayFormas[i].getArea()) {
+				
+				arrayFormas[i].getNombreForma();
+				arrayFormas[i].mostrarInfo();
+				break;
+			}
+		}
+	}
+	
+	public static void escalarFigura(Forma[] arrayFormas) {
+		
+		int indiceForma = 0;
+		double escalaNueva = 0;
+		
+		System.out.print("Ingresa el indice de la figura que quiere escalar: ");
+		indiceForma = scan.nextInt();
+		System.out.print("Ingresa el nuevo escalado: ");
+		escalaNueva = scan.nextDouble();
+		
+		for(int i = 0; i < arrayFormas.length; i++) {
+			
+			if(indiceForma == i) {
+				
+				arrayFormas[i].cambiarEscala(escalaNueva);
+				arrayFormas[i].calcArea();
+				arrayFormas[i].calcPerimetro();
+				break;
+			}
+		}
+
+		for(int i = 0; i < arrayFormas.length; i++) {
+			
+			arrayFormas[i].mostrarInfo();;
+		}
+		
+	}
 }
