@@ -34,6 +34,7 @@ public class Main {
 		double lado = 0;
 		double radio = 0;
 
+		System.out.println(".:Ingresa la figura que quieres crear");
 		System.out.println("1. Rectangulo");
 		System.out.println("2. Cuadrado");
 		System.out.println("3. Elipse");

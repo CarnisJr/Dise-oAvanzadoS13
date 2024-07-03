@@ -29,7 +29,7 @@ public class Elipse extends Forma{
 	@Override //2PIsqrt((r^2+R^2)/2)
 	public void calcPerimetro() {
 		
-		this.setPerimetro(7);
+		this.setPerimetro(2 * PI * Math.sqrt((((radioMayor * radioMayor) + (radioMenor * radioMenor)) / 2)));
 	}
 
 	@Override
