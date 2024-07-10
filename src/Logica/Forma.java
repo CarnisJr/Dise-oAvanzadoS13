@@ -1,6 +1,6 @@
 package Logica;
 
-public class Forma {
+public abstract class Forma {
 
 	private String color = "";
 	private String nombreForma = "";
@@ -16,6 +16,14 @@ public class Forma {
 		this.nombreForma = nombreForma;
 		this.posicion = pos;
 	}
+
+	public abstract void calcArea();
+
+	public abstract void calcPerimetro();
+
+	public abstract void cambiarEscala(double escala);
+	
+	public abstract void mostrarInfo();
 
 	public Posicion getPosicion() {
 		
@@ -57,25 +65,6 @@ public class Forma {
 		this.perimetro = perimetro;
 	}
 
-	public void calcArea() {
-		
-		this.area = 0;
-	}
-
-	public void calcPerimetro() {
-		
-		this.perimetro = 0;
-	}
-
-	public void cambiarEscala(double escala) {
-		
-		System.out.println("Escala 1 a 1");
-	}
-	
-	public void mostrarInfo() {
-		
-		System.out.println("No hay info de la Forma");
-	}
 	
 	public void moverForma(double nuevaPosX, double nuevaPosY) {
 		
